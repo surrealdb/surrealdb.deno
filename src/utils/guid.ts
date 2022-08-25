@@ -1,3 +1,6 @@
+import { customAlphabet } from "https://deno.land/x/nanoid/mod.ts";
+const nanoid = customAlphabet('1234567890abcdefghijklmnopqrstuvwxyz', 10);
+
 export default function() {
-	return Math.random().toString(36).substr(2, 10);
+	return nanoid();
 }
