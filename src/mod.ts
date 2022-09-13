@@ -288,6 +288,8 @@ export default class Surreal extends Emitter {
 	}
 
 	query(query, vars) {
+		query = query.replaceAll(/\n/g, " ");
+
 		let id = guid();
 		return this.wait().then( () => {
 			return new Promise( (resolve, reject) => {
