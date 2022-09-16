@@ -1,16 +1,22 @@
-import Emitter from "./emitter.ts";
+import Emitter, {EventMap} from "./emitter.ts";
+import Surreal from "../mod.ts";
+interface LiveEventMap extends EventMap {
+	create: [any]
+	update: [any]
+	delete: [any]
+}
 
-export default class Live extends Emitter {
+export default class Live extends Emitter<LiveEventMap> {
 
 	#id = undefined;
 
-	#db = undefined;
+	#db:Surreal;
 
-	#sql = undefined;
+	#sql: string;
 
-	#vars = undefined;
+	#vars: any[];
 
-	constructor(db, sql, vars) {
+	constructor(db: Surreal, sql: string, vars: any[]) {
 
 		super()
 
@@ -24,11 +30,11 @@ export default class Live extends Emitter {
 			this.open();
 		}
 
-		this.#db.on("opened", e => {
+		this.#db.on("opened", () => {
 			this.open();
 		});
 
-		this.#db.on("closed", e => {
+		this.#db.on("closed", () => {
 			this.#id = undefined;
 		});
 

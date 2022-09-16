@@ -1,19 +1,17 @@
 export default class Pinger {
 
-	#pinger = undefined;
-
-	#interval = undefined;
+	#pinger: number | undefined = undefined;
+	#interval: number;
 
 	constructor(interval = 30000) {
 		this.#interval = interval;
 	}
 
-	start(func, ...args) {
-		this.#pinger = setInterval(func, this.#interval);
+	start(func: (...args: any[]) => void, ...args: any[]) {
+		this.#pinger = setInterval(func, this.#interval, ...args);
 	}
 
 	stop() {
 		clearInterval(this.#pinger);
 	}
-
 }

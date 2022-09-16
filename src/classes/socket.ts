@@ -1,33 +1,39 @@
-import Emitter from "./emitter.ts";
+import Emitter, {EventMap} from "./emitter.ts";
 
 const OPENED = Symbol("Opened");
 const CLOSED = Symbol("Closed");
 
-export default class Socket extends Emitter {
+interface SocketEventMap extends EventMap {
+	message: [MessageEvent],
+	open: [Event],
+	close: [Event],
+	error: [Event]
+}
 
-	#ws = null;
-
-	#url = null;
-
+export default class Socket extends Emitter<SocketEventMap> {
+	#ws: WebSocket | null = null;
+	#url: string
 	#closed = false;
-
 	#status = CLOSED;
 
-	constructor(url) {
+	ready: Promise<void>
+	resolve: () => void = () => {}
+
+	constructor(url: string) {
 
 		super();
 
-		this.#init();
+		this.ready = new Promise(resolve => {
+			this.resolve = resolve;
+		});
 
 		this.#url = String(url)
 			.replace("http://", "ws://")
 			.replace("https://", "wss://")
 		;
-
 	}
 
 	#init() {
-
 		this.ready = new Promise(resolve => {
 			this.resolve = resolve;
 		});
@@ -102,13 +108,13 @@ export default class Socket extends Emitter {
 
 	}
 
-	send(data) {
-		this.#ws.send(data);
+	send(data: string) {
+		this.#ws!.send(data);
 	}
 
 	close(code=1000, reason="Some reason") {
 		this.#closed = true;
-		this.#ws.close(code, reason);
+		this.#ws!.close(code, reason);
 	}
 
 }
