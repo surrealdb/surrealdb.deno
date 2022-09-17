@@ -5,6 +5,8 @@
   "types": "./dist/types.d.ts",
   "main": "./dist/node.cjs.js",
   "module": "./dist/browser.esm.js",
+  "unpkg": "dist/browser.esm.js",
+  "jsdelivr": "dist/browser.esm.js",
   "scripts": {
     "build": "tsc -p tsconfig.json && rollup -c"
   },
