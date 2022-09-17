@@ -25,7 +25,8 @@ const configs = defineConfig(Object.keys(targets).flatMap(target => targets[targ
             }
         },
         esbuild({
-            target: target === 'browser' ? 'es2017' : 'esNext'
+            target: target === 'browser' ? 'es2017' : 'esNext',
+            minify: target === 'browser'
         })
     ],
     external: [
