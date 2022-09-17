@@ -1,4 +1,5 @@
 import Emitter, {EventMap} from "./emitter";
+import {ws as WebSocket} from '../deps/deps'
 
 const OPENED = Symbol("Opened");
 const CLOSED = Symbol("Closed");

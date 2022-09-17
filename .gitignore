@@ -26,3 +26,6 @@ Temporary Items
 # -----------------------------------
 
 *.db
+node_modules
+dist
+tmp-dts

@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES2017",
+        "declaration": true,
+        "declarationDir": "./tmp-dts",
+        "emitDeclarationOnly": true,
+        "moduleResolution": "Node"
+    },
+    "include": ["./src/**/*.ts"]
+}

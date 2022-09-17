@@ -20,7 +20,9 @@ interface Response<T = any> {
 	result: Array<T> | T,
 	error: Error
 	method: string, 
-	id: string
+	id: string,
+	action: string,
+	query: string
 }
 
 export default class Surreal extends Emitter<SurrealEventMap> {
@@ -476,5 +478,3 @@ export default class Surreal extends Emitter<SurrealEventMap> {
 	}
 
 }
-
-
