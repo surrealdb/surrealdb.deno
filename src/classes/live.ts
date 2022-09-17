@@ -1,5 +1,5 @@
-import Emitter, {EventMap} from "./emitter.ts";
-import Surreal from "../mod.ts";
+import Emitter, {EventMap} from "./emitter";
+import Surreal from "../mod";
 interface LiveEventMap extends EventMap {
 	create: [any]
 	update: [any]

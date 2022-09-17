@@ -1,4 +1,4 @@
-import Emitter, {EventMap} from "./emitter.ts";
+import Emitter, {EventMap} from "./emitter";
 
 const OPENED = Symbol("Opened");
 const CLOSED = Symbol("Closed");
