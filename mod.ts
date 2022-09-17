@@ -1,1 +1,1 @@
-export { default } from "./src/mod.ts";
+export { default } from "./src/mod";

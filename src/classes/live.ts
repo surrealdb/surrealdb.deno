@@ -1,4 +1,4 @@
-import Emitter from "./emitter.ts";
+import Emitter from "./emitter";
 
 export default class Live extends Emitter {
 

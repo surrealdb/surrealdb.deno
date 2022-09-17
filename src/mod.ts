@@ -1,9 +1,9 @@
-import guid from "./utils/guid.ts";
-import errors from "./errors/mod.ts";
-import Live from "./classes/live.ts";
-import Socket from "./classes/socket.ts";
-import Pinger from "./classes/pinger.ts";
-import Emitter from "./classes/emitter.ts";
+import guid from "./utils/guid";
+import errors from "./errors/mod";
+import Live from "./classes/live";
+import Socket from "./classes/socket";
+import Pinger from "./classes/pinger";
+import Emitter from "./classes/emitter";
 
 let singleton = undefined;
 
