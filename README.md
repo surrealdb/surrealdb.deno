@@ -14,6 +14,8 @@
     <a href="https://github.com/surrealdb/surrealdb.deno"><img src="https://img.shields.io/badge/status-dev-ff00bb.svg?style=flat-square"></a>
     &nbsp;
     <a href="https://surrealdb.com/docs/integration/libraries/javascript"><img src="https://img.shields.io/badge/docs-view-44cc11.svg?style=flat-square"></a>
+    &nbsp;
+    <a href="https://deno.land/x/surrealdb.deno"><img src="https://img.shields.io/badge/deno-view-ee8449.svg?style=flat-square"></a>
 </p>
 
 <p align="center">
